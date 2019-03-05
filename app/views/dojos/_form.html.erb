@@ -1,0 +1,30 @@
+<%= form_with(model: dojo, local: true) do |form| %>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= form.text_field :branch %>
+      <%= form.label :branch %>
+    </div>
+    <div class="input-field col s6">
+      <%= form.select :user_id, options_from_collection_for_select(all_users, "id", "first_name"), select:"Select user" %>
+      <%= form.label :manager %>
+    </div>
+  </div>
+  <div class="row top-margin2">
+    <div class="input-field col s4">
+      <%= form.text_field :street %>
+      <%= form.label :street %>
+    </div>
+    <div class="input-field col s4">
+      <%= form.text_field :city %>
+      <%= form.label :city %>
+    </div>
+    <div class="input-field col s4">
+      <%= form.select :state, options_for_select(us_states),{} %>
+      <%= form.label :state %>
+    </div>
+  </div>
+
+  <button class="btn waves-effect sn logreg" type="submit" name="action" style="width:10rem; margin: 2rem 1rem 0">SUBMIT
+    <i class="material-icons right blue-text">send</i>
+  </button>
+<% end %>

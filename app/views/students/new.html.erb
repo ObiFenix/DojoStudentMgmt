@@ -1,0 +1,46 @@
+<!-- ADD New Student to a Student PAGE COMPONENT -->
+
+<div class="container">
+
+    <%= render "errors", student: @student %>
+
+    <h2 class="_header bottom-margin4">Add
+        <span>
+            <b class="grey-text text-lighten-2">New Student</b>
+        </span>
+    </h2>
+
+    <%= form_with(model: @student, url: dojo_students_path, local: true, class: 'mt-4') do |f| %>
+        <div class="row">
+            <div class="input-field col s6">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name,  autocomplete: "first_name", :class => 'white-text' %>
+            </div>
+            <div class="input-field col s6">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name, autocomplete: "last_name", :class => 'white-text' %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <%= f.label :email %>
+                <%= f.email_field :email, autocomplete: "email", :class => 'white-text' %>
+            </div>
+            <div class="input-field col s6">
+                <%= f.label :branch %>
+                <%= f.select :dojo_id, options_for_select(all_dojos.collect{|dojo| [dojo.branch, dojo.id] }), :class => 'custom-select' %>
+            </div>
+        </div>
+
+        <button
+            class="btn waves-effect sn logreg"
+            type="submit"
+            name="action"
+            style="width:10rem; margin: 1rem">SUBMIT
+            <i class="material-icons right blue-text">send</i>
+        </button>
+    <% end %>
+</div>
+
+<%= link_to 'Show Dojo', dojo_path(params[:dojo_id]), class:'btn sn bottom-links' %>
+<%= link_to 'Back', url_for(:back), class:'btn sn bottom-links right limits' %>

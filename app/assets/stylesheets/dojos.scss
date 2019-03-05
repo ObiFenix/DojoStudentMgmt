@@ -1,0 +1,58 @@
+// Place all the styles related to the dojos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the dojos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Table Section
+.theader      { color: #06a9e2; font-family: 'Poiret One', cursive; }
+th:last-child { padding-left: 2rem !important; }
+.trbody       { font-family: 'Poiret One', cursive; }
+.trbody > td  { padding: 15px 5px; }
+.trbody > td:last-child  { padding-left: 2rem !important; }
+.trbody > td:last-child > a { margin: 0.1rem auto;  width: 5rem; }
+.trbody > td:last-child > form {
+    input { margin: 0; }
+    width: 5rem;
+    margin: 0rem auto;
+    display: inline-table !important;
+}
+.trbody:hover { color: #06a9e2; background-color: #0000006b !important; }
+
+.show {
+    letter-spacing: .2rem;
+    padding: .5rem 1.6rem;
+    border-radius: 1rem !important;
+    font-size: 10px !important;
+    color: #06a9e2 !important;
+    &:hover {
+        color: white !important;
+        background-color: #06a9e2 !important;
+    }
+}
+.edit {
+    letter-spacing: .2rem;
+    //padding: .4rem .8rem;
+    padding: .5rem 1.8rem;
+    border-radius: 1rem !important;
+    font-size: 10px !important;
+    color: lime !important;
+    &:hover {
+        color: white !important;
+        background-color: green !important;
+    }
+}
+.delete {
+    letter-spacing: .2rem;
+    //padding: .4rem .8rem;
+    padding: .5rem 1.5rem;
+    border-radius: 1rem !important;
+    font-size: 10px !important;
+    color: #f44336 !important;
+    &:hover {
+        color: white !important;
+        background-color: red !important;
+    }
+}

@@ -1,0 +1,37 @@
+<div class="container-logreg">
+
+  <h4 class="_header">L<span class="white-text">OGIN</span></h4>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="input-field" style="margin-bottom: 2rem">
+      <%= f.label :email %>
+      <%= f.email_field :email, autocomplete: 'email'%>
+    </div>
+
+    <div class="input-field" style="margin-bottom: 2rem">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: 'current-password' %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <label>
+        <%= f.check_box :remember_me, type:'checkbox' %>
+        <span>Remember Me</span>
+      </label>
+    <% end %>
+    <br/>
+    <br/>
+    <br/>
+
+    <button class="btn waves-effect sn bottom-margin2 logreg" type="submit" name="action" style="width:10rem;">LOGIN
+      <i class="material-icons right blue-text">send</i>
+    </button>
+    <br/>
+
+    <%= render "devise/shared/links" %>
+
+  <% end %>
+
+</div>

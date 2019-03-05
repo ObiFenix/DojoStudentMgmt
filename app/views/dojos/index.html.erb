@@ -1,0 +1,62 @@
+<div class="container">
+    <h4 class="_header">
+        Current
+        <span class="white-text">#</span> of Dojos:
+        <span class="white-text"><b><%= @dojos.count %></b></span>
+    </h4>
+
+    <table class="highlight center">
+        <thead>
+            <tr>
+                <th class="theader">Coding Dojo Branch</th>
+                <th class="theader">Street            </th>
+                <th class="theader">City              </th>
+                <th class="theader">State             </th>
+                <% if current_user %>
+                <th class="theader">Actions           </th>
+                <% end %>
+            </tr>
+        </thead>
+        <tbody>
+            <div>
+                <% @dojos.each do |dojo| %>
+                <tr class="trbody">
+                    <td><%= link_to "#{dojo.branch}", dojo %></td>
+                    <td><%= dojo.street %></td>
+                    <td><%= dojo.city   %></td>
+                    <td><%= dojo.state  %></td>
+                    <td>
+                        <%= link_to 'View Details', "/dojos/#{dojo.id}", class:'sn show' %>
+                        <% if admin %>
+                        <%= link_to 'Edit', edit_dojo_path(dojo), class:'sn edit' %>
+                        <%= link_to 'Delete', dojo, class:'sn delete', method: :delete, data: { confirm: 'Are you sure?' } %>
+                        <% end %>
+                    </td>
+                </tr>
+                <% end %>
+            </div>
+        </tbody>
+    </table>
+</div>
+
+<div class="row center-align">
+  <% unless current_user %>
+  <div class="new_dojo">
+      <%= link_to new_user_session_path,
+          class:'btn waves-effect',
+          style:'font-size:.6rem;width:16rem' do %>
+          <i class="material-icons right blue-text">send</i> Login | Register
+      <% end %>
+  </div>
+  <% else %>
+  <div class="new_dojo">
+      <% if admin %>
+      <%= link_to new_dojo_path,
+          class:'btn waves-effect bottom-margin2',
+          style:'font-size:.6rem; width:16rem;' do %>
+          <i class="material-icons right blue-text">send</i> ADD NEW DOJO
+      <% end %>
+      <% end %>
+  </div>
+  <% end %>
+</div>

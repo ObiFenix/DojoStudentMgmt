@@ -1,0 +1,70 @@
+<div class="container" style="padding: 2rem 4rem !important">
+    <!--
+    ==========
+    Header...
+    ==========
+    -->
+    <h2 class="_header">
+        <%= @staff.fullname %>'s
+        <b><span class="grey-text text-lighten-2">Profile</span></b>
+    </h2>
+    <ul class="col s12">
+        <li class="col s6 mt-3 mb-3"><h6>Branch: <span class="grey-text"><%= @this_dojo.branch %></span></li></h6>
+        <li class="col s6 mt-3 mb-3"><h6>Title: <span class="grey-text"><%= @title %></span></li></h6>
+        <li class="col s6 mt-3 mb-3"><h6>Email: <span class="grey-text"><%= @staff.email %></span></li></h6>
+    </ul><br/>
+
+    <!--
+    =========================
+    Dojo/Student Cohort Table
+    =========================
+    -->
+    <% unless !@staff.students %>
+    <table class="highlight">
+        <h4 class="cheading-view top-margin2">Students Registered by this User</h4>
+        <thead>
+        <tr>
+            <th class="theader">First Name</th>
+            <th class="theader">Last Name </th>
+            <th class="theader">Email     </th>
+            <th class="theader">Date      </th>
+        </tr>
+        </thead>
+        <tbody>
+            <div>
+                <% @staff.students.each do |student| %>
+                <tr class="trbody">
+                    <td><%= student.first_name %></td>
+                    <td><%= student.last_name  %></td>
+                    <td><%= student.email      %></td>
+                    <td><%= student.created_at %></td>
+                </tr>
+                <% end %>
+            </div>
+        </tbody>
+    </table>
+    <% else %>
+    <h4 class="grey-text text-lighten-1 top-margin4 _header"
+        style="margin:2rem 0 !important"
+    >
+        No Student Has Been Added by This User,
+        <b class="grey-text text-lighten-2">Yet!</b>
+    </h4>
+    <% end %>
+
+    <!--
+    Actions
+    -->
+    <div class="grided center">
+        <%=
+          link_to  'Edit Your Account',
+          edit_user_registration_path(current_user),
+          class:'btn edit sn blue-text top-margin6',
+          style:'border-radius:.25rem !important'
+        %>
+    </div>
+</div>
+
+<%= link_to 'Register New Student', new_dojo_students_path(@this_dojo), class:'btn sn bottom-links' %>
+<%= link_to 'Show Dojo Details', dojo_path(@this_dojo), class:'btn sn bottom-links', style:'margin-left:0.2rem !important' %>
+<%= link_to 'Back', url_for(:back), class:'btn sn bottom-links right limits' %>

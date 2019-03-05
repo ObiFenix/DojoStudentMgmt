@@ -1,0 +1,19 @@
+.bg-image {
+  background-image: url("https://d279m997dpfwgl.cloudfront.net/wp/2018/05/0531_wedding-1000x667.jpg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: red;
+  min-height: 90.5vh;
+  min-width: inherit;
+  // filter: blur(2px) !important;
+  // -webkit-filter: blur(2px);
+  // height: 0 !important;
+}
+
+// Table Section
+// .trbody      { font-size: 14px !important; }
+.trbody > td { padding: 0.5rem; }
+.trbody > td:first-child > a { font-size: 12px; font-weight: bolder; }
+.trbody > td:first-child > a:hover { color: #81c784 !important; }
+.trbody:hover { color: #06a9e2; background-color: #0000006b !important; }

@@ -1,0 +1,9 @@
+<div class="container">
+    <%= render 'errors', dojo: @dojo %>
+    <h2><b>Edit <span class="grey-text text-lighten-2"><%=@dojo.branch%></span></b></h2>
+    <%= render 'form', dojo: @dojo %>
+</div>
+
+<%= link_to 'Show', @dojo, class:'btn btn-small sn bottom-links' %>
+<%= link_to 'Back', url_for(:back), class:'btn sn bottom-links right limits' %>
+<%# <%= link_to 'Back', dojos_path %>

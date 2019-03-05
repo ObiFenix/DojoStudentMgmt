@@ -1,0 +1,14 @@
+<main class="container-fluid">
+    <%- if controller_name == 'sessions' %>
+    <div class="container-logreg" role="alert" style="border-bottom:none !important;">
+    <% else %>
+    <div class="container" role="alert" style="border-bottom:none !important;">
+    <% end %>
+
+      <% if notice %><p class="msg msg-success z-depth scale-transition"><%= notice %></p><% end %>
+      <% if alert %><p class="msg msg-error z-depth-3 scale-transition"><%= alert %></p><% end %>
+      
+    </div>
+
+    <%= yield %>
+</main>
