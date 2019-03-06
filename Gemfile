@@ -10,7 +10,7 @@ gem 'uglifier', '>= 1.3.0'			# Use Uglifier as compressor for JavaScript assets
 gem 'jquery-rails'          			# Use jquery as the JavaScript library
 gem 'materialize-sass'
 gem 'twitter-bootstrap-rails'
-gem 'bootstrap', '<= 4.3.1'
+gem 'bootstrap', '>= 4.3.1'
 gem 'mini_racer', platforms: :ruby
 gem 'coffee-rails', '~> 4.2'			# Use CoffeeScript for .coffee assets and views
 gem 'turbolinks', '~> 5'	    		# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
