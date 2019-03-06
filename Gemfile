@@ -10,7 +10,7 @@ gem 'uglifier', '>= 1.3.0'			# Use Uglifier as compressor for JavaScript assets
 gem 'jquery-rails'          			# Use jquery as the JavaScript library
 gem 'materialize-sass'
 gem 'twitter-bootstrap-rails'
-gem 'bootstrap', '<= 4.3.1'
+gem 'bootstrap', '>= 4.3.1'
 gem 'mini_racer', platforms: :ruby
 gem 'coffee-rails', '~> 4.2'			# Use CoffeeScript for .coffee assets and views
 gem 'turbolinks', '~> 5'	    		# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -23,7 +23,7 @@ gem 'bcrypt', '~> 3.1.7'	    		# Use ActiveModel has_secure_password
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false	# Reduces boot times through caching; required in config/boot.rb
 
-group :development, :test do	          	
+group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]	# Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'factory_bot_rails'
   gem 'rspec-rails'
