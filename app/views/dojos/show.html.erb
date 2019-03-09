@@ -1,10 +1,10 @@
 <div class="container">
   <h2 class="heading-view"><b>Coding Dojo<span class="white-text"> <%= @dojo.city %></span></b></h2>
   <ul class="col s12">
-      <li class="col s6"><h6>Address: <span class="grey-text"><%= @dojo.street %></span></li></h6>
+      <li class="col s6"><p class="u_info">Address: <span class="grey-text"><%= @dojo.street %></span></p></li>
       <li class="col s6">
-          <h6>City: <span class="grey-text"><%= @dojo.city   %></span></h6>
-          <h6>State: <span class="grey-text"><%= @dojo.state  %></span></h6>
+          <p class="u_info">City: <span class="grey-text"><%= @dojo.city   %></span></p>
+          <p class="u_info">State: <span class="grey-text"><%= @dojo.state  %></span></p>
       </li>
   </ul>
 
@@ -54,6 +54,6 @@
 <%= link_to 'Add New Student', new_dojo_students_path(@dojo), class:'btn sn bottom-links' %>
 <% end %>
 <% if admin %>
-<%= link_to 'Edit Dojo', edit_dojo_path(@dojo), class:'btn sn bottom-links', style:'margin-left:0.2rem !important'%>
+<%= link_to 'Edit Dojo', edit_dojo_path(@dojo), class:'btn sn bottom-links', style:'margin-left:0.2rem !important' %>
 <% end %>
-<%= link_to 'Back', url_for(:back), class:'btn sn bottom-links right limits' %>
+<%= link_to 'Back', :back, class:'btn sn bottom-links right limits' %>

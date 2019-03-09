@@ -88,11 +88,10 @@ nav {
             color: #999;
             padding: 2rem;
             margin-right: 0;
-            transition: all .3s ease-out;
+            transition: all .2s ease-out;
             &:hover {
-                transition: all .3s ease-in;
-                border-top: 4px solid #06a9e2;
-                letter-spacing: .1rem;
+                transition: all .2s ease-in;
+                border-bottom: 4px solid #06a9e2;
                 color: white;
                 span { color: inherit; }
             }
@@ -119,6 +118,11 @@ nav {
 
 .logreg:hover {
   letter-spacing: .1rem;
+}
+.u_info {
+  &:last-child { margin-bottom: none; }
+  margin: .5rem 0;
+  font-size: 1.2rem !important;
 }
 
 .msg-error {
@@ -184,6 +188,7 @@ nav {
     padding: 2rem 1rem;
     margin: 0rem auto;
     position: relative;
+    &:hover { transition: all .5s ease-in-out !important; box-shadow: 0px 0px 6px 0px #06a9e2; }
 }
 .container-logreg {
     padding: 2rem 1rem;
@@ -193,12 +198,11 @@ nav {
     position: relative;
     h2 { margin: 2rem 0rem 1rem; }
     form { padding: 1rem 2rem !important; }
-    // box-shadow: 0px 0px 2px 0px #06a9e2;
     border: 1px solid #06a9e2;
     border-top: none !important;
     background-color: #171414e3 !important;
-    transition: all 3s ease-in-out !important;
     small { font-size: 10px; margin-left: 3rem;}
+    &:hover { transition: all .5s ease-in-out !important; box-shadow: 0px 0px 6px 0px #06a9e2; }
 }
 
 .container-error {
@@ -336,7 +340,7 @@ form {
     &:hover {
     //   color: #fff !important;
     //   background: #101010c2 !important;
-        letter-spacing: .19rem;
+        letter-spacing: .18rem;
         background: #fff !important;
         border: 1px solid #999 !important;
         box-shadow: 1px 1px 2px 0px #111;
@@ -357,6 +361,7 @@ form {
     color: #06a9e2;
     cursor:pointer;
     &:hover {
+        letter-spacing: .18rem;
         color: white !important;
         background-color: #06a9e2 !important;
     }
@@ -372,7 +377,7 @@ form {
     color: #fff;
     height: auto;
     font-size: 12px;
-    letter-spacing: .2rem;
+    letter-spacing: .15rem;
     background-color: #111;
 }
 .sn {

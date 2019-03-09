@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.3.1'
 
 gem 'rails', '~> 5.2.2'		  		# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'puma', '~> 3.11'		    		# Use Puma as the app server
@@ -10,7 +10,7 @@ gem 'uglifier', '>= 1.3.0'			# Use Uglifier as compressor for JavaScript assets
 gem 'jquery-rails'          			# Use jquery as the JavaScript library
 gem 'materialize-sass'
 gem 'twitter-bootstrap-rails'
-gem 'bootstrap', '>= 4.3.1'
+gem 'bootstrap', '<= 4.3.1'
 gem 'mini_racer', platforms: :ruby
 gem 'coffee-rails', '~> 4.2'			# Use CoffeeScript for .coffee assets and views
 gem 'turbolinks', '~> 5'	    		# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -45,7 +45,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.18.4'
   gem 'rails_12factor'
 end
 
