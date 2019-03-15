@@ -34,8 +34,9 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
+        this_dojo = Dojo.find(params[:dojo_id])
         # format.html { redirect_to dojo_student_url, notice: 'Student was successfully created.' }
-        format.html { redirect_to dojo_path(@this_dojo), notice: 'Student was successfully created.' }
+        format.html { redirect_to dojo_path(this_dojo), notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }

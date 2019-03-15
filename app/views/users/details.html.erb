@@ -27,7 +27,7 @@
     =========================
     -->
     <% if current_user %>
-    <% unless !@staff.students %>
+    <% if @any_staff %>
     <table class="highlight">
         <h4 class="cheading-view top-margin2">Students Registered by this User</h4>
         <thead>
@@ -55,7 +55,7 @@
     <h4 class="grey-text text-lighten-1 top-margin4 _header"
         style="margin:2rem 0 !important"
     >
-        No Student Has Been Added by This User,
+        No Student has been registered,
         <b class="grey-text text-lighten-2">Yet!</b>
     </h4>
     <% end %>
@@ -63,11 +63,11 @@
     <!--
     Actions
     -->
-    <div class="grided center">
+    <div class="center">
         <%=
-          link_to  'Edit Your Account',
+          link_to  'Edit Account',
           edit_user_registration_path(current_user),
-          class:'btn edit sn blue-text top-margin4',
+          class:'btn edit sn #00ff00b5-text top-margin4',
           style:'border-radius:.25rem !important'
         %>
     </div>
@@ -76,8 +76,5 @@
 
 <% if current_user %>
 <%= link_to 'Register New Student', new_dojo_students_path(@this_dojo), class:'btn sn bottom-links' %>
-<%= link_to 'Show Dojo Details', dojo_path(@this_dojo), class:'btn sn bottom-links', style:'margin-left:0.2rem !important' %>
-<% else %>
-<%= link_to 'Show Dojo Details', dojo_path(@this_dojo), class:'btn sn bottom-links' %>
 <% end %>
-<%= link_to 'Back', :back, class:'btn sn bottom-links right limits' %>
+<%= link_to 'Back', dojo_path(@this_dojo), class:'btn sn bottom-links right limits' %>

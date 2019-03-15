@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/:id/details' => 'users#details'
   root :to => 'dojos#index'
+  get 'users/:id/details' => 'users#details'
+  # get 'staff/new' => 'users#new'
+  # post 'staff' => 'users#create'
   devise_for :users
   resources :dojos do
     resource :students

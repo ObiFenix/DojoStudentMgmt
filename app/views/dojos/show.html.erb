@@ -8,7 +8,7 @@
       </li>
   </ul>
 
-  <% if all_users %>
+  <% if @any_users %>
   <h4 class="heading-view top-margin4"><b>Staff<span class="white-text">Members</span></b></h4>
   <table class="highlight">
       <thead>
@@ -21,7 +21,7 @@
       </thead>
       <tbody>
           <div>
-              <% all_users.each do |user| %>
+              <% @dojo.users.each do |user| %>
               <tr class="trbody">
                   <td><%= link_to "#{user.fullname}", "/users/#{user.id}/details", class:'grey-text text-lighten-1' %></td>
                   <td><%= user.email      %></td>
@@ -44,16 +44,15 @@
   </table>
   <% else %>
   <h4 class="grey-text text-lighten-1 top-margin4 _header" style="margin:2rem 0 !important">
-      No Student Has Been Added by This User,
+      No Staff Has Been Registered at this Dojo,
       <b class="grey-text text-lighten-2">Yet!</b>
   </h4>
   <% end %>
 </div>
 
-<% if current_user %>
-<%= link_to 'Add New Student', new_dojo_students_path(@dojo), class:'btn sn bottom-links' %>
-<% end %>
 <% if admin %>
-<%= link_to 'Edit Dojo', edit_dojo_path(@dojo), class:'btn sn bottom-links', style:'margin-left:0.2rem !important' %>
+<%# <%= link_to 'Add New Staff', new_dojo_students_path(@dojo), class:'btn sn bottom-links' %>
+<%= link_to 'Edit This Dojo', edit_dojo_path(@dojo), class:'btn sn bottom-links'%>
 <% end %>
-<%= link_to 'Back', :back, class:'btn sn bottom-links right limits' %>
+
+<%= link_to 'Back', dojos_path, class:'btn sn bottom-links right limits' %>

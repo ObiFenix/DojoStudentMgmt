@@ -15,7 +15,8 @@ class DojosController < ApplicationController
   # GET /dojos/1.json
   # =================
   def show
-  end
+    @any_users=(@dojo.users.count > 0) ? true : false
+   end
 
   # ==============
   # GET /dojos/new

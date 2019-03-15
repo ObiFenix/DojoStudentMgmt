@@ -2,9 +2,9 @@
     <div class="nav-wrapper">
         <%= link_to root_path do %><img src="/assets/codingdojo.png" /><% end %>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <%= link_to  "Dashboard", dojos_url, style:'display:inline-block !important;'%>
+            <%= link_to  "Dashboard", root_path, style:'display:inline-block !important;'%>
             <% unless !current_user %>
-            <%= link_to  "Profile", edit_user_registration_path(current_user), style:'display:inline-block !important;'%>
+            <%= link_to  "Profile", "/users/#{current_user.id}/edit", style:'display:inline-block !important;'%>
             <%= link_to "Log out", destroy_user_session_path, data: { method: :delete, confirm: "Are you sure?"}, style:'display:inline-block !important;'%>
             <% end %>
         </ul>

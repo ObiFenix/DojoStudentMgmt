@@ -1,7 +1,7 @@
 class Dojo < ApplicationRecord
   belongs_to :user
 
-  has_many  :users
+  has_many  :users, :dependent => :destroy
   has_many  :students, :dependent => :destroy
   has_many  :students_added, :through => :users, :source => :students
 

@@ -13,22 +13,22 @@
     <%= form_with(model: @student, url: dojo_students_path, local: true, class: 'mt-4') do |f| %>
         <div class="row">
             <div class="input-field col s6">
+                <%= f.text_field :first_name,  autocomplete: "first_name" %>
                 <%= f.label :first_name %>
-                <%= f.text_field :first_name,  autocomplete: "first_name", :class => 'white-text' %>
             </div>
             <div class="input-field col s6">
+                <%= f.text_field :last_name, autocomplete: "last_name" %>
                 <%= f.label :last_name %>
-                <%= f.text_field :last_name, autocomplete: "last_name", :class => 'white-text' %>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
+                <%= f.email_field :email, autocomplete: "email" %>
                 <%= f.label :email %>
-                <%= f.email_field :email, autocomplete: "email", :class => 'white-text' %>
             </div>
             <div class="input-field col s6">
+                <%= f.select :dojo_id, options_for_select(all_dojos.collect{|dojo| [dojo.branch, dojo.id] }) %>
                 <%= f.label :branch %>
-                <%= f.select :dojo_id, options_for_select(all_dojos.collect{|dojo| [dojo.branch, dojo.id] }), :class => 'custom-select' %>
             </div>
         </div>
 
@@ -42,5 +42,4 @@
     <% end %>
 </div>
 
-<%= link_to 'Show Dojo', dojo_path(params[:dojo_id]), class:'btn sn bottom-links' %>
-<%= link_to 'Back', :back, class:'btn sn bottom-links right limits' %>
+<%= link_to 'Back', dojo_path(params[:dojo_id]), class:'btn sn bottom-links right limits' %>

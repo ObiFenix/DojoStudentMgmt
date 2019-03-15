@@ -3,7 +3,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require popper
 //= require materialize-sprockets
-//= require bootstrap
 //= require_tree .
